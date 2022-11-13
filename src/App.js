@@ -3,19 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 // Komponen - properties
+function Umur(props){
+  return <span> berumur {props.age}</span>
+}
 
-function Greeting() {
-  return <h1>Roger Sumatera</h1>
+function Greeting(props) {
+  return <h1>Icikiwir {props.name} - <Umur age={props.age} /></h1>
 }
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Greeting />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Greeting />
-        
+        <Greeting name="Roger Sumatera" age="40" />
+        <Greeting name="Sigit Rendang" age="24" />
       </header>
     </div>
     );
